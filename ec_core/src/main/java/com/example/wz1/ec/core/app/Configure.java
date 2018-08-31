@@ -27,6 +27,7 @@ public class Configure {
     //存取相同类型多个配置 如 iconfont iconfty类型
     private final static List<IconFontDescriptor> ICONFONT=new ArrayList<>();
 
+    //测试修改  ds
     private final static Handler HANDLER=new Handler();
 
 
