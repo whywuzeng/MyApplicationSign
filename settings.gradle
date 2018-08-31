@@ -1,0 +1,1 @@
+include ':app', ':fragmentation_core', ':ec_core', ':ec_shop', ':ec_annotation', ':ec_compiler'

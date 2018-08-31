@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+                    android:background="#ff33b5e5"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            tools:text="别看了，我就是一个TextView" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
