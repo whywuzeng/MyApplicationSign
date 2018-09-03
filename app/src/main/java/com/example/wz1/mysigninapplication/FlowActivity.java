@@ -3,7 +3,8 @@ package com.example.wz1.mysigninapplication;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.example.wz1.mysigninapplication.Base.MySupportActivity;
+import me.yokeyword.fragmentation.Base.MySupportActivity;
+
 
 /**
  * Created by Administrator on 2018-08-23.
@@ -13,7 +14,7 @@ import com.example.wz1.mysigninapplication.Base.MySupportActivity;
  * com.example.wz1.mysigninapplication
  */
 
-public class FlowActivity extends MySupportActivity{
+public class FlowActivity extends MySupportActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

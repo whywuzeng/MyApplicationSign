@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.wz1.mysigninapplication.Base.BaseMainFragment;
 import com.example.wz1.mysigninapplication.Bean.Article;
 import com.example.wz1.mysigninapplication.adapter.HomeAdapter;
 import com.example.wz1.mysigninapplication.listener.OnItemClickListener;
@@ -19,6 +18,7 @@ import com.example.wz1.mysigninapplication.listener.OnItemClickListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.yokeyword.fragmentation.Base.MySupportFragment;
 import me.yokeyword.fragmentation.ISupportActivity;
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
 
@@ -30,7 +30,7 @@ import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
  * com.example.wz1.mysigninapplication
  */
 
-public class HomeFragment extends BaseMainFragment {
+public class HomeFragment extends MySupportFragment {
 
     private String[] mTitles;
 
