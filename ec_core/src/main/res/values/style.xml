@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="dialog" parent="Theme.AppCompat.Dialog">
+        <!--//不需要标题-->
+        <item name="android:windowNoTitle">true</item>
+        <!--对话框半透明-->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--无边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--后面的背景透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--悬浮-->
+        <item name="android:windowIsFloating">true</item>
+    </style>
+</resources>

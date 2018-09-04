@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.Interceptor;
+
 /**
  * Created by Administrator on 2018-08-31.
  * <p>
@@ -29,6 +31,9 @@ public class Configure {
 
     //测试修改  ds
     private final static Handler HANDLER=new Handler();
+
+    //interceptor
+    private static final ArrayList<Interceptor> INTERCEPTOR_MAP= new ArrayList<>();
 
 
     public Configure(){
@@ -55,10 +60,31 @@ public class Configure {
         return this;
     }
 
+    public Configure configureApiHost(String host) {
+        CONFIGURE_KEY.put(ConfigureKey.CONFIGURE_APIHOST, host);
+        return this;
+    }
+
     public Configure configureContext(Context context)
     {
         CONFIGURE_KEY.put(ConfigureKey.CONFIGURE_CONTEXT,context);
         return this;
+    }
+
+    public Configure withInterceptor(ArrayList<Interceptor> interceptors)
+    {
+        this.INTERCEPTOR_MAP.addAll(interceptors);
+        return this;
+    }
+
+    public Configure withInterceptor(Interceptor interceptor)
+    {
+        this.INTERCEPTOR_MAP.add(interceptor);
+        return this;
+    }
+
+    public ArrayList<Interceptor> getInterceptorMap(){
+        return INTERCEPTOR_MAP;
     }
 
     private final void checkConfigure(ConfigureKey key)

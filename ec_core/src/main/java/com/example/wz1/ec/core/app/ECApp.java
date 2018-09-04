@@ -3,6 +3,7 @@ package com.example.wz1.ec.core.app;
 import android.app.Application;
 import android.content.Context;
 
+import java.util.Map;
 import java.util.logging.Handler;
 
 /**
@@ -17,6 +18,11 @@ public class ECApp {
 
     public static Configure init(Context context){
         return Configure.getInstance().configureAppContext(context).configureContext(context);
+    }
+
+    public static Map<Object,Object> getConfigureMap()
+    {
+        return Configure.getInstance().getConfigureKey();
     }
 
     public static Handler getConfigureHandler()

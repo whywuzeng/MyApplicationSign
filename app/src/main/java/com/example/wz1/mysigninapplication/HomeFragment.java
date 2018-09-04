@@ -1,18 +1,16 @@
 package com.example.wz1.mysigninapplication;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.wz1.ec.core.Custom.CustomLayoutManager;
 import com.example.wz1.mysigninapplication.Base.BaseMainFragment;
 import com.example.wz1.mysigninapplication.Bean.Article;
 import com.example.wz1.mysigninapplication.adapter.HomeAdapter;
@@ -32,7 +30,7 @@ import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
  * com.example.wz1.mysigninapplication
  */
 
-public class HomeFragment extends BaseMainFragment {
+public class HomeFragment extends MySupportFragment {
 
     private String[] mTitles;
 
@@ -59,8 +57,6 @@ public class HomeFragment extends BaseMainFragment {
     private void initView(View view) {
         mToolbar = (Toolbar) view.findViewById(R.id.toolbar);
         mRecy = (RecyclerView) view.findViewById(R.id.recy);
-        button =(Button)view.findViewById(R.id.button);
-        button11 =(Button)view.findViewById(R.id.button11);
 
         mTitles = getResources().getStringArray(R.array.array_title);
         mContents = getResources().getStringArray(R.array.array_content);

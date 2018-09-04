@@ -1,4 +1,4 @@
-package com.example.wz1.mysigninapplication.Base;
+package me.yokeyword.fragmentation.Base;
 
 import android.app.Activity;
 import android.content.Intent;

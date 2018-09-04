@@ -21,7 +21,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(path: ':fragmentation_core')
-    //字体图标
-    api project(':ec_core')
+    api project(':ec_shop')
+    annotationProcessor project(':ec_compiler')
 }

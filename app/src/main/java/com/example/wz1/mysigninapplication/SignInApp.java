@@ -3,6 +3,7 @@ package com.example.wz1.mysigninapplication;
 import android.app.Application;
 
 import com.example.wz1.ec.core.app.ECApp;
+import com.example.wz1.ec.core.interceptor.DebugInterceptor;
 import com.example.wz1.mysigninapplication.font.IconTianModule;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
 import com.joanzapata.iconify.fonts.IoniconsModule;
@@ -20,7 +21,9 @@ public class SignInApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        ECApp.init(this).withIcon(new FontAwesomeModule())
+        ECApp.init(this).configureApiHost("http://127.0.0.1")
+                .withInterceptor(new DebugInterceptor("http://127.0.0.1",R.raw.test))
+                .withIcon(new FontAwesomeModule())
                 .withIcon(new IconTianModule())
                 .withIcon(new IoniconsModule())
                 .configure();
