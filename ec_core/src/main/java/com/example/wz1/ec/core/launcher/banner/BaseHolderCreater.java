@@ -1,5 +1,7 @@
 package com.example.wz1.ec.core.launcher.banner;
 
+import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
+
 /**
  * Created by Administrator on 2018-09-04.
  * <p>
@@ -8,5 +10,10 @@ package com.example.wz1.ec.core.launcher.banner;
  * com.example.wz1.ec.core.launcher.banner
  */
 
-public class BaseHolderCreater {
+public class BaseHolderCreater implements CBViewHolderCreator<baseImageHolderView> {
+    @Override
+    public baseImageHolderView createHolder() {
+
+        return new baseImageHolderView();
+    }
 }

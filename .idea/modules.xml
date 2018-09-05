@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyApplicationSign.iml" filepath="$PROJECT_DIR$/MyApplicationSign.iml" />
+      <module fileurl="file://F:\githubProject\fragmentation\MySignInApplication\MyApplicationSign.iml" filepath="F:\githubProject\fragmentation\MySignInApplication\MyApplicationSign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MySignInApplication.iml" filepath="$PROJECT_DIR$/MySignInApplication.iml" />
       <module fileurl="file://D:\EC\MyWork\MyApplicationSign\MySignInApplication.iml" filepath="D:\EC\MyWork\MyApplicationSign\MySignInApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/ec_annotation/ec_annotation.iml" filepath="$PROJECT_DIR$/ec_annotation/ec_annotation.iml" />

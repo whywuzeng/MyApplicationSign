@@ -1,7 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--app:layout_constraintLeft_toRightOf="@id/ma_tv"-->
+    <!--app:layout_constraintTop_toBottomOf="@+id/ma_tv"-->
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/banner"
+        android:background="#765"
+        android:text="Banner"
+        android:gravity="center"
+        app:layout_constraintDimensionRatio="H,16:6"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:text="测试appCompatTextView测试appCompatTextView测试appCompatTextView"
+        android:id="@+id/test_tv"
+        app:layout_constraintStart_toEndOf="@id/ma_tv"
+        android:textColor="#333"
+        android:textSize="16dp"
+        app:layout_constraintTop_toTopOf="@id/ma_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/ma_tv"
+        android:text="马云"
+        android:paddingTop="5dp"
+        android:textColor="#333"
+        android:textSize="16dp"
+        android:paddingLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@id/banner"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="140dp"
+        android:layout_height="86dp"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:text="8分钟之前"
+        android:layout_marginStart="8dp"
+        android:textColor="#333"
+        android:textSize="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@id/ma_tv"
+        app:layout_constraintBottom_toBottomOf="@id/ma_tv"
+        />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineH"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineW"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/float_button"
+        android:text="floatButton"
+        android:textColor="#333"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:background="#a87"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="60dp"
+        android:layout_height="60dp"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tab1"
+        android:background="#487"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textSize="18dp"
+        android:textColor="#333"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintRight_toLeftOf="@id/tab2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:text="tab1"
+        android:layout_width="0dp"
+        android:layout_height="35dp"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tab2"
+        android:background="#487"
+        app:layout_constraintLeft_toRightOf="@id/tab1"
+        app:layout_constraintRight_toLeftOf="@id/tab3"
+        android:textSize="18dp"
+        android:textColor="#333"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:text="tab2"
+        android:layout_width="0dp"
+        android:layout_height="35dp"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tab3"
+        android:background="#487"
+        app:layout_constraintLeft_toRightOf="@id/tab2"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="18dp"
+        android:textColor="#333"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:text="tab3"
+        android:layout_width="0dp"
+        android:layout_height="35dp"/>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/test1_tv"
+        android:text="test"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintHorizontal_bias="0.9"
+        android:visibility="gone"
+        tools:layout_editor_absoluteY="339dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:text="button5"
+        app:layout_constraintRight_toLeftOf="@id/test1_tv"
+        app:layout_goneMarginLeft="110dp"
+        android:layout_marginEnd="8dp"/>
 
 </android.support.constraint.ConstraintLayout>

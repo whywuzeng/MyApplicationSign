@@ -1,4 +1,4 @@
-package com.example.wz1.ec.core.storage;
+package com.example.wz1.ec.core.utils.storage;
 
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -10,7 +10,7 @@ import com.example.wz1.ec.core.app.ECApp;
  * <p>
  * by author wz
  * <p>
- * com.example.wz1.ec.core.storage
+ * com.example.wz1.ec.core.utils.storage
  */
 
 public class PrefrencesUtils  {

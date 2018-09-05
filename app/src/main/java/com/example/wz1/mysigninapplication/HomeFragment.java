@@ -1,17 +1,18 @@
 package com.example.wz1.mysigninapplication;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.wz1.mysigninapplication.Base.BaseMainFragment;
+import com.example.wz1.ec.core.Custom.CustomLayoutManager;
 import com.example.wz1.mysigninapplication.Bean.Article;
 import com.example.wz1.mysigninapplication.adapter.HomeAdapter;
 import com.example.wz1.mysigninapplication.listener.OnItemClickListener;
@@ -19,6 +20,7 @@ import com.example.wz1.mysigninapplication.listener.OnItemClickListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.yokeyword.fragmentation.Base.MySupportFragment;
 import me.yokeyword.fragmentation.ISupportActivity;
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
 

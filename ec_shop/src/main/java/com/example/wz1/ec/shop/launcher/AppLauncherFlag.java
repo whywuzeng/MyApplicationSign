@@ -8,5 +8,7 @@ package com.example.wz1.ec.shop.launcher;
  * com.example.wz1.ec.shop.launcher
  */
 
-public class AppLauncherFlag {
+public enum AppLauncherFlag{
+    //第一次登陆需要Scorll图片
+    APP_FIRST_SCORLL_FLAG
 }

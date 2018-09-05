@@ -44,7 +44,7 @@ public class ECAppLoader {
     //默认的loader
     public static void showLoading(Context context)
     {
-        showLoading(context,LoadStyle.BallSpinFadeLoaderIndicator);
+        showLoading(context,LoadStyle.BallClipRotatePulseIndicator);
     }
 
     public static void stopLoading()
