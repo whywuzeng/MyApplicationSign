@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.example.wz1.ec.core.app.ECApp;
 import com.example.wz1.ec.core.interceptor.DebugInterceptor;
+import com.example.wz1.ec.shop.databasemanager.DatabaseManager;
 import com.example.wz1.mysigninapplication.font.IconTianModule;
 import com.facebook.stetho.Stetho;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
@@ -27,8 +28,11 @@ public class SignInApp extends Application {
 
         initStackView();
         initStetho();
+        initToast();
 
-        ECApp.init(this).configureApiHost("http://localhost:3003")
+        DatabaseManager.getInstanse().init(this);
+
+        ECApp.init(this).configureApiHost("http://127.0.0.0:3003/")
                 .withInterceptor(new DebugInterceptor("http://127.0.0.1",R.raw.test))
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new IconTianModule())
@@ -40,6 +44,9 @@ public class SignInApp extends Application {
         //appec class 类  初始化
 
 
+    }
+
+    private void initToast() {
     }
 
     private void initStetho() {

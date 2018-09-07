@@ -14,8 +14,9 @@ public enum  IconTianFonts implements Icon{
 
     icon_xie('\u344f'),
     icon_move('\u345a'),
-    icon_home('\u345f');
-
+    icon_home('\u345f'),
+    icon_tianmao('\u3462'),
+    icon_press_tianmao('\u3463');
     private char character;
 
     IconTianFonts(char character) {
