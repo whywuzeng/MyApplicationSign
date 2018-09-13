@@ -32,8 +32,8 @@ public class SignInApp extends Application {
 
         DatabaseManager.getInstanse().init(this);
 
-        ECApp.init(this).configureApiHost("http://127.0.0.0:3003/")
-                .withInterceptor(new DebugInterceptor("http://127.0.0.1",R.raw.test))
+        ECApp.init(this).configureApiHost("http://192.168.1.105:3003/")
+                .withInterceptor(new DebugInterceptor("http://127.0.0.0",R.raw.test))
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new IconTianModule())
                 .withIcon(new IoniconsModule())
@@ -42,8 +42,6 @@ public class SignInApp extends Application {
         //一个configure class 配置类 集成各种 配置信息
 
         //appec class 类  初始化
-
-
     }
 
     private void initToast() {

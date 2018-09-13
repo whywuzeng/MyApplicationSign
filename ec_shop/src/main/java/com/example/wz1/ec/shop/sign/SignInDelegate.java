@@ -1,5 +1,6 @@
 package com.example.wz1.ec.shop.sign;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
@@ -14,6 +15,7 @@ import com.example.wz1.ec.core.net.back.IFailure;
 import com.example.wz1.ec.core.net.back.ISucess;
 import com.example.wz1.ec.shop.R;
 import com.example.wz1.ec.shop.R2;
+import com.example.wz1.ec.shop.launcher.ScrollerDelegate;
 import com.joanzapata.iconify.widget.IconButton;
 
 import butterknife.BindView;
@@ -37,6 +39,13 @@ public class SignInDelegate extends CheckDelegate {
     AppCompatButton btnSignUp;
     @BindView(R2.id.ibtn_link_wechat)
     IconButton ibtnLinkWechat;
+    private ISignInListener listener;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        listener= (ISignInListener) _mActivity;
+    }
 
     @Override
     public Object setLayout() {
@@ -69,32 +78,41 @@ public class SignInDelegate extends CheckDelegate {
     @OnClick(R2.id.btn_sign_up)
     public void onViewClicked() {
         if (checkFrom()){
-            new RestClient.RestClientBuild().url("list")
-                    .params("name",editSignupName.getText().toString())
-                    .params("password",editSignupPassword.getText().toString())
+            RestClient build = new RestClient.RestClientBuild().url("list")
+                    .params("name", editSignupName.getText().toString())
+                    .params("password", editSignupPassword.getText().toString())
+                    .context(_mActivity)
                     .error(new IError() {
                         @Override
                         public void onError(int code, String message) {
                             ToastUtils.showShort(message);
                         }
                     }).failure(new IFailure() {
-                @Override
-                public void onFailure(Throwable t) {
-                    ToastUtils.showShort(t.getLocalizedMessage());
-                }
-            }).sucess(new ISucess() {
-                @Override
-                public void onSucess(String result) {
+                        @Override
+                        public void onFailure(Throwable t) {
+                            ToastUtils.showShort(t.getLocalizedMessage());
+                        }
+                    }).sucess(new ISucess() {
+                        @Override
+                        public void onSucess(String result) {
+                            SignDataHanlder.SignIn(result,listener);
+                        }
+                    }).build();
 
-                }
-            });
-
+            build.post();
         }
     }
 
     //连接微信
     @OnClick(R2.id.ibtn_link_wechat)
     public void onLinkWechatClicked() {
+        // TODO: 2018/9/8 测试 singleTask作用  再测试下 singleTop
+        getSupportDelegate().start(new ScrollerDelegate(),SINGLETASK);
+    }
 
+    //去注册
+    @OnClick(R2.id.btn_sign_in)
+    public void onBtnSignInClicked(){
+        getSupportDelegate().start(new SignUpDelegate(),SINGLETASK);
     }
 }

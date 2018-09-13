@@ -1,15 +1,17 @@
 package com.example.wz1.ec.shop.launcher;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
+import com.example.wz1.ec.core.app.AccountManager;
+import com.example.wz1.ec.core.app.IUserCheck;
 import com.example.wz1.ec.core.delegate.BaseDelegate;
 import com.example.wz1.ec.core.launcher.BaseTimerTask;
 import com.example.wz1.ec.core.launcher.ITimerTask;
 import com.example.wz1.ec.core.utils.storage.PrefrencesUtils;
-import com.example.wz1.ec.shop.BuildConfig;
 import com.example.wz1.ec.shop.R;
 import com.example.wz1.ec.shop.R2;
 
@@ -32,6 +34,8 @@ public class LauncherDelegate extends BaseDelegate implements ITimerTask {
     AppCompatTextView tvLauncherTimer;
     private static final int TIMER_COUNT=3;
 
+    private ILauncherFinish finish;
+
     @OnClick(R2.id.tv_launcher_timer)
     public void onTvTimerClick(View v)
     {
@@ -44,6 +48,12 @@ public class LauncherDelegate extends BaseDelegate implements ITimerTask {
     }
 
     @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        finish= (ILauncherFinish)_mActivity;
+    }
+
+    @Override
     public Object setLayout() {
         return R.layout.launcher_delegate2;
     }
@@ -52,10 +62,6 @@ public class LauncherDelegate extends BaseDelegate implements ITimerTask {
     public void BindView(@Nullable Bundle savedInstanceState) {
 
         initTimer();
-        if (BuildConfig.DEBUG)
-        {
-            PrefrencesUtils.setAppFlag(AppLauncherFlag.APP_FIRST_SCORLL_FLAG.name(),false);
-        }
     }
 
     private void initTimer() {
@@ -85,9 +91,19 @@ public class LauncherDelegate extends BaseDelegate implements ITimerTask {
     private void checkScorllerDelegate() {
         if (!PrefrencesUtils.getAppFlag(AppLauncherFlag.APP_FIRST_SCORLL_FLAG.name()))
         {
-            getSupportDelegate().start(new ScrollerDelegate(),SINGLETASK);
+            getSupportDelegate().start(new ScrollerDelegate(),SINGLETOP);
         }else {
-            //检查是否登录
+            AccountManager.checkAccount(new IUserCheck() {
+                @Override
+                public void onUserSignIn() {
+                    finish.onLauncherFinish(LauncherFinishTag.SIGNED);
+                }
+
+                @Override
+                public void onUserNoSignIn() {
+                    finish.onLauncherFinish(LauncherFinishTag.NO_SIGNUP);
+                }
+            });
         }
     }
 

@@ -6,13 +6,19 @@ import android.support.v7.app.ActionBar;
 
 import com.example.wz1.ec.core.activites.ProxyActivity;
 import com.example.wz1.ec.core.delegate.BaseDelegate;
+import com.example.wz1.ec.shop.launcher.ILauncherFinish;
+import com.example.wz1.ec.shop.launcher.LauncherDelegate;
+import com.example.wz1.ec.shop.launcher.LauncherFinishTag;
+import com.example.wz1.ec.shop.sign.ISignInListener;
 import com.example.wz1.ec.shop.sign.SignInDelegate;
+import com.example.wz1.ec.shop.sign.SignInTag;
+import com.example.wz1.mysigninapplication.delegate.HomeDelegate;
 
 /**
  * Created by wz on 2018/9/1.
  */
 
-public class Main2Activity extends ProxyActivity {
+public class Main2Activity extends ProxyActivity implements ISignInListener,ILauncherFinish {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,6 +34,33 @@ public class Main2Activity extends ProxyActivity {
     @Override
     public BaseDelegate setRootDelegate() {
 
-        return new SignInDelegate();
+        return new LauncherDelegate();
+    }
+
+    @Override
+    public void onSignInSuccess(SignInTag tag) {
+        switch (tag)
+        {
+            case SIGN_IN:
+            case SIGN_UP:
+                getSupportDelegate().start(new HomeDelegate());
+                break;
+        }
+    }
+
+    @Override
+    public void onLauncherFinish(LauncherFinishTag tag) {
+        switch (tag)
+        {
+            case SIGNED:
+                //
+                getSupportDelegate().startWithPop(new HomeDelegate());
+                break;
+            case NO_SIGNUP:
+                getSupportDelegate().startWithPop(new SignInDelegate());
+                break;
+                default:
+                    break;
+        }
     }
 }
