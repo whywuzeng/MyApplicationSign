@@ -19,7 +19,7 @@ import me.yokeyword.fragmentation.Base.MySupportFragment;
 
 public abstract class BaseDelegate extends MySupportFragment {
 
-    private View rootView;
+    protected View rootView;
     public abstract Object setLayout();
     private Unbinder mUnbinder=null;
     public abstract void BindView(@Nullable Bundle savedInstanceState);

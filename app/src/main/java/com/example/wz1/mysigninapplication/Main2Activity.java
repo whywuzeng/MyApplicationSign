@@ -6,13 +6,7 @@ import android.support.v7.app.ActionBar;
 
 import com.example.wz1.ec.core.activites.ProxyActivity;
 import com.example.wz1.ec.core.delegate.BaseDelegate;
-import com.example.wz1.ec.shop.launcher.ILauncherFinish;
-import com.example.wz1.ec.shop.launcher.LauncherDelegate;
-import com.example.wz1.ec.shop.launcher.LauncherFinishTag;
-import com.example.wz1.ec.shop.sign.ISignInListener;
-import com.example.wz1.ec.shop.sign.SignInDelegate;
-import com.example.wz1.ec.shop.sign.SignInTag;
-import com.example.wz1.mysigninapplication.delegate.HomeDelegate;
+import com.example.wz1.ec.shop.main.EcBottomDelegate;
 
 /**
  * Created by wz on 2018/9/1.
@@ -34,6 +28,12 @@ public class Main2Activity extends ProxyActivity implements ISignInListener,ILau
     @Override
     public BaseDelegate setRootDelegate() {
 
+        return new EcBottomDelegate();
+    }
+
+    @Override
+    public void onBackPressedSupport() {
+        super.onBackPressedSupport();
         return new LauncherDelegate();
     }
 
