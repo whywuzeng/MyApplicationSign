@@ -22,14 +22,14 @@ public abstract class BaseItemBottomDelegate extends ECAppDelegate {
         if (System.currentTimeMillis() - preTime > TIMEDIFF) {
             ToastUtils.showShort("双击退出" + getString(R.string.app_name));
             preTime = System.currentTimeMillis();
+            return false;
         }
         else {
-            _mActivity.onBackPressed();
+            _mActivity.finish();
             if (preTime != 0) {
                 preTime = 0;
             }
             return true;
         }
-        return super.onBackPressedSupport();
     }
 }

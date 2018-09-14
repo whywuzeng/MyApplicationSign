@@ -83,6 +83,7 @@ public abstract class BaseBottomDelegate extends ECAppDelegate {
             textView.setText(bean.getTitle());
         }
         MySupportFragment[] mySupportFragments = ITEM_BOTTOM_DELEGATES.toArray(new MySupportFragment[]{});
+        
         clickColor(mIndexDelegate);
         getSupportDelegate().loadMultipleRootFragment(R.id.rl_container, mIndexDelegate, mySupportFragments);
     }

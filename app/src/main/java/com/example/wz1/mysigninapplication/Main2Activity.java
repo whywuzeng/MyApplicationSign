@@ -34,6 +34,8 @@ public class Main2Activity extends ProxyActivity {
 
     @Override
     public void onBackPressedSupport() {
-        super.onBackPressedSupport();
+//        super.onBackPressedSupport();
     }
+
+
 }
