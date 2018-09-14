@@ -1,5 +1,6 @@
 package com.example.wz1.ec.shop.sign;
 
+import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -45,7 +46,13 @@ public class SignUpDelegate extends ECAppDelegate {
     @BindView(R2.id.edit_signup_re_password)
     TextInputEditText editSignupRePassword;
     Unbinder unbinder;
+    private ISignInListener listener;
 
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        listener= (ISignInListener) _mActivity;
+    }
 
     @Override
     public Object setLayout() {
@@ -104,7 +111,7 @@ public class SignUpDelegate extends ECAppDelegate {
                 .sucess(new ISucess() {
                     @Override
                     public void onSucess(String result) {
-
+                        SignDataHanlder.SignUp(result,listener);
                     }
                 }).error(new IError() {
                     @Override

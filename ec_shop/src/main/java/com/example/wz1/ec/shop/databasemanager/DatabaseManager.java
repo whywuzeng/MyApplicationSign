@@ -17,6 +17,12 @@ public class DatabaseManager {
     private DaoSession daoSession;
     private UserProfileDao userProfileDao;
 
+    public UserpassDao getUserpassDao() {
+        return userpassDao;
+    }
+
+    private UserpassDao userpassDao;
+
     private final static class DatabaseManagerHolder{
         private final static DatabaseManager DATABASE_MANAGER=new DatabaseManager();
     }
@@ -38,9 +44,12 @@ public class DatabaseManager {
         final Database writableDb = help.getWritableDb();
         daoSession = new DaoMaster(writableDb).newSession();
         userProfileDao = daoSession.getUserProfileDao();
+        userpassDao= daoSession.getUserpassDao();
     }
 
     public UserProfileDao getUserProfileDao() {
         return userProfileDao;
     }
+
+
 }

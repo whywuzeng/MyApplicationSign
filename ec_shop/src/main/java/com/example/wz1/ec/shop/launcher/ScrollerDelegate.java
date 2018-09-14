@@ -1,10 +1,14 @@
 package com.example.wz1.ec.shop.launcher;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
+import com.example.wz1.ec.core.app.AccountManager;
+import com.example.wz1.ec.core.app.IUserCheck;
 import com.example.wz1.ec.core.delegate.CheckDelegate;
 import com.example.wz1.ec.core.launcher.banner.BaseHolderCreater;
 import com.example.wz1.ec.core.utils.storage.PrefrencesUtils;
@@ -26,9 +30,23 @@ import butterknife.BindView;
 
 public class ScrollerDelegate extends CheckDelegate implements OnItemClickListener {
 
+    private static final String TAG = "ScrollerDelegate";
     @BindView(R2.id.scroller_banner)
     ConvenientBanner<Integer> scrollerBanner;
     private List<Integer> mSrcData;
+    private ILauncherFinish finish;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        finish= (ILauncherFinish) activity;
+    }
+
+    @Override
+    public void onNewBundle(Bundle args) {
+        super.onNewBundle(args);
+        Log.e(TAG, "onNewBundle: " );
+    }
 
     @Override
     public Object setLayout() {
@@ -61,7 +79,22 @@ public class ScrollerDelegate extends CheckDelegate implements OnItemClickListen
         {
             //点到最后一个点
             PrefrencesUtils.setAppFlag(AppLauncherFlag.APP_FIRST_SCORLL_FLAG.name(),true);
+            AccountManager.checkAccount(new IUserCheck() {
+                @Override
+                public void onUserSignIn() {
+                    finish.onLauncherFinish(LauncherFinishTag.SIGNED);
+                }
 
+                @Override
+                public void onUserNoSignIn() {
+                    finish.onLauncherFinish(LauncherFinishTag.NO_SIGNUP);
+                }
+            });
+
+        }else if (position==0)
+        {
+            // TODO: 2018/9/8 测试 singleTask作用
+            getSupportDelegate().start(new ScrollerDelegate(),SINGLETOP);
         }
     }
 }

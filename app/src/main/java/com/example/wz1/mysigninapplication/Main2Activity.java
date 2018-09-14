@@ -13,7 +13,7 @@ import com.example.wz1.ec.shop.main.EcBottomDelegate;
  * EC 主Activity
  */
 
-public class Main2Activity extends ProxyActivity {
+public class Main2Activity extends ProxyActivity implements ISignInListener,ILauncherFinish {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +34,35 @@ public class Main2Activity extends ProxyActivity {
 
     @Override
     public void onBackPressedSupport() {
+        super.onBackPressedSupport();
+        return new LauncherDelegate();
+    }
+
+    @Override
+    public void onSignInSuccess(SignInTag tag) {
+        switch (tag)
+        {
+            case SIGN_IN:
+            case SIGN_UP:
+                getSupportDelegate().start(new HomeDelegate());
+                break;
+        }
+    }
+
+    @Override
+    public void onLauncherFinish(LauncherFinishTag tag) {
+        switch (tag)
+        {
+            case SIGNED:
+                //
+                getSupportDelegate().startWithPop(new HomeDelegate());
+                break;
+            case NO_SIGNUP:
+                getSupportDelegate().startWithPop(new SignInDelegate());
+                break;
+                default:
+                    break;
+        }
 //        super.onBackPressedSupport();
     }
 

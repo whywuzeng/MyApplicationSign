@@ -9,7 +9,7 @@ import org.greenrobot.greendao.database.Database;
  * Created by Administrator on 2018-09-06.
  * <p>
  * by author wz
- * //重写 DaoMaster 为了 防止数据被删除
+ * //重写 DaoMaster 为了 防止数据被删除  升级数据库不会丢失原来的数据
  * <p>
  * com.example.wz1.ec.shop.databasemanager
  */
