@@ -26,7 +26,7 @@ import javax.lang.model.element.TypeElement;
 /**
  * Created by wz on 2018/9/8.
  */
-@SupportedSourceVersion(SourceVersion.RELEASE_7)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 @AutoService(Processor.class)
 public class ECAppProcessor extends AbstractProcessor {
 

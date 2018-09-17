@@ -1,5 +1,6 @@
 package com.example.wz1.ec.shop.main.index;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -32,6 +33,23 @@ public class IndexDelegate extends BaseItemBottomDelegate {
     @BindView(R2.id.swipe_index)
     SwipeRefreshLayout swipeIndex;
 
+    private SwipeHandle swipeHandle;
+
+    @SuppressLint("ResourceAsColor")
+    public void initSwipeRefresh(){
+        swipeIndex.setColorSchemeColors(
+                android.R.color.holo_blue_dark,
+                android.R.color.holo_red_dark
+        );
+        swipeIndex.setProgressViewOffset(true,80,120);
+    }
+
+    @Override
+    public void onLazyInitView(@Nullable Bundle savedInstanceState) {
+        super.onLazyInitView(savedInstanceState);
+        initSwipeRefresh();
+    }
+
     @Override
     public Object setLayout() {
 
@@ -40,7 +58,8 @@ public class IndexDelegate extends BaseItemBottomDelegate {
 
     @Override
     public void BindView(@Nullable Bundle savedInstanceState) {
-
+        swipeHandle=new SwipeHandle();
+        swipeHandle.initSwipeRefresh(swipeIndex);
     }
 
 }

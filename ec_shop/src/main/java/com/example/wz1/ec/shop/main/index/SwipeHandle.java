@@ -14,21 +14,30 @@ public class SwipeHandle implements SwipeRefreshLayout.OnRefreshListener{
 
     public void initSwipeRefresh(SwipeRefreshLayout layout){
         this.swipeRefreshLayout=layout;
-        this.swipeRefreshLayout.setRefreshing(true);
+        swipeRefreshLayout.setOnRefreshListener(this);
     }
 
     public void endSwipeRefresh()
     {
+        swipeRefreshLayout.setRefreshing(true);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 swipeRefreshLayout.setRefreshing(false);
+
             }
         },2000);
     }
 
-    @Override
-    public void onRefresh() {
+    public void firstPage(String url)
+    {
 
     }
+
+    @Override
+    public void onRefresh() {
+        endSwipeRefresh();
+    }
+
+
 }

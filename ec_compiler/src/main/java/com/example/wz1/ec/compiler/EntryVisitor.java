@@ -9,13 +9,13 @@ import java.io.IOException;
 import javax.annotation.processing.Filer;
 import javax.lang.model.element.Modifier;
 import javax.lang.model.type.TypeMirror;
-import javax.lang.model.util.SimpleAnnotationValueVisitor7;
+import javax.lang.model.util.SimpleAnnotationValueVisitor8;
 
 /**
  * Created by wz on 2018/9/8.
  */
 
-public final class EntryVisitor extends SimpleAnnotationValueVisitor7<Void,Void> {
+public final class EntryVisitor extends SimpleAnnotationValueVisitor8<Void,Void> {
     //遍历对象
     private Filer mFiler=null;
     private String packageName =null;
