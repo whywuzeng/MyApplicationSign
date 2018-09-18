@@ -2,6 +2,13 @@ package com.example.wz1.ec.shop.main.index;
 
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.widget.Toast;
+
+import com.example.wz1.ec.core.app.ECApp;
+import com.example.wz1.ec.core.net.RestClient;
+import com.example.wz1.ec.core.net.back.IError;
+import com.example.wz1.ec.core.net.back.IFailure;
+import com.example.wz1.ec.core.net.back.ISucess;
 
 
 /**
@@ -31,7 +38,24 @@ public class SwipeHandle implements SwipeRefreshLayout.OnRefreshListener{
 
     public void firstPage(String url)
     {
+        RestClient build = new RestClient.RestClientBuild().url(url)
+                .sucess(new ISucess() {
+                    @Override
+                    public void onSucess(String result) {
+                        Toast.makeText(ECApp.getApplicationContext(),result,Toast.LENGTH_SHORT).show();
+                    }
+                }).failure(new IFailure() {
+                    @Override
+                    public void onFailure(Throwable t) {
 
+                    }
+                }).error(new IError() {
+                    @Override
+                    public void onError(int code, String message) {
+
+                    }
+                }).build();
+        build.get();
     }
 
     @Override

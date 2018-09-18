@@ -60,6 +60,7 @@ public class IndexDelegate extends BaseItemBottomDelegate {
     public void BindView(@Nullable Bundle savedInstanceState) {
         swipeHandle=new SwipeHandle();
         swipeHandle.initSwipeRefresh(swipeIndex);
+        swipeHandle.firstPage("index.php");
     }
 
 }

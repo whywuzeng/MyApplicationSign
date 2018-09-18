@@ -69,10 +69,10 @@ public class RestClient {
             IREQUEST.onRequestStart();
         }
 
-        if (mLoadStyle!=null)
-        {
-            showLoading(context,mLoadStyle);
-        }else {
+        if (mLoadStyle != null) {
+            showLoading(context, mLoadStyle);
+        }
+        else if (context != null) {
             showLoading(context);
         }
 
