@@ -58,4 +58,6 @@ dependencies {
     api 'com.alibaba:fastjson:1.2.29'
     //数据库依赖
     api 'org.greenrobot:greendao:3.2.2'
+    //RecyclerView 依赖
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 }

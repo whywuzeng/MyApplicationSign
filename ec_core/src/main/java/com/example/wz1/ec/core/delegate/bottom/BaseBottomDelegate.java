@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.wz1.ec.core.R;
 import com.example.wz1.ec.core.delegate.ECAppDelegate;
+import com.example.wz1.ec.core.delegate.anim.BottomAnim;
 import com.joanzapata.iconify.widget.IconTextView;
 
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import me.yokeyword.fragmentation.Base.MySupportFragment;
+import me.yokeyword.fragmentation.ISupportActivity;
+import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
 
 /**
  * Created by Administrator on 2018-09-13.
@@ -34,6 +37,7 @@ public abstract class BaseBottomDelegate extends ECAppDelegate {
     private ContentFrameLayout contentLayout;
     private int mCurrentPosition;
     private int mIndexDelegate = 0;
+    private View containerID;
 
     //1:初始 tabbean  得到linkedhashmap 数据
     protected abstract LinkedHashMap<TableBean, BaseItemBottomDelegate> getItem();
@@ -61,11 +65,28 @@ public abstract class BaseBottomDelegate extends ECAppDelegate {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initTabData();
+        ((ISupportActivity) _mActivity).setFragmentAnimator(new DefaultHorizontalAnimator());
+    }
+
+    @Override
+    public void onSupportVisible() {
+        super.onSupportVisible();
+        BottomAnim build = BottomAnim.build(containerID);
+        build.startIn();
+    }
+
+    @Override
+    public void onSupportInvisible() {
+        super.onSupportInvisible();
+        BottomAnim build = BottomAnim.build(containerID);
+        build.startOut();
     }
 
     //2：来代码生成布局
     public void generateLayout() {
-        View containerID = rootView.findViewById(R.id.item_container);
+          containerID = rootView.findViewById(R.id.item_container);
+
+
         contentLayout = (ContentFrameLayout) rootView.findViewById(R.id.rl_container);
         for (final TableBean bean : ITEM) {
             ViewGroup itemLayout = (ViewGroup) getLayoutInflater().inflate(R.layout.bottom_item_icon_text_layout, (ViewGroup) containerID, true);

@@ -30,7 +30,7 @@ public class HomeDelegate extends CheckDelegate {
     @Override
     public void BindView(@Nullable Bundle savedInstanceState) {
 
-        RestClient build = new RestClient.RestClientBuild().url("http://127.0.0.1/")
+        RestClient build = new RestClient.RestClientBuild().url("")
                 .params("", "")
                 .context(_mActivity)
                 .request(new IRequest() {

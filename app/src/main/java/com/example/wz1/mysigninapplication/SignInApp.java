@@ -32,7 +32,7 @@ public class SignInApp extends Application {
 
         DatabaseManager.getInstanse().init(this);
 
-        ECApp.init(this).configureApiHost("http://192.168.1.105:3003/")
+        ECApp.init(this).configureApiHost("http://127.0.0.0/")
                 .withInterceptor(new DebugInterceptor("http://127.0.0.0",R.raw.test))
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new IconTianModule())
