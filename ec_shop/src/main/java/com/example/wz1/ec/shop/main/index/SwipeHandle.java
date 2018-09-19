@@ -2,13 +2,16 @@ package com.example.wz1.ec.shop.main.index;
 
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.widget.Toast;
 
-import com.example.wz1.ec.core.app.ECApp;
+import com.blankj.utilcode.util.ToastUtils;
 import com.example.wz1.ec.core.net.RestClient;
 import com.example.wz1.ec.core.net.back.IError;
 import com.example.wz1.ec.core.net.back.IFailure;
 import com.example.wz1.ec.core.net.back.ISucess;
+import com.example.wz1.ec.core.ui.recycle.MultipleFields;
+import com.example.wz1.ec.core.ui.recycle.MultipleItemEntity;
+
+import java.util.ArrayList;
 
 
 /**
@@ -42,7 +45,11 @@ public class SwipeHandle implements SwipeRefreshLayout.OnRefreshListener{
                 .sucess(new ISucess() {
                     @Override
                     public void onSucess(String result) {
-                        Toast.makeText(ECApp.getApplicationContext(),result,Toast.LENGTH_SHORT).show();
+                        IndexDataConverter indexDataConverter = new IndexDataConverter();
+                        indexDataConverter.setJsonData(result);
+                        ArrayList<MultipleItemEntity> itemEntityList = indexDataConverter.getItemEntityList();
+                        itemEntityList.get(1).getField(MultipleFields.IMAGE_URL);
+                        ToastUtils.showShort((String) itemEntityList.get(1).getField(MultipleFields.IMAGE_URL));
                     }
                 }).failure(new IFailure() {
                     @Override
