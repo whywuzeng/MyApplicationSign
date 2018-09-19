@@ -18,9 +18,9 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import me.yokeyword.fragmentation.Base.MySupportFragment;
 import me.yokeyword.fragmentation.ISupportActivity;
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
+import me.yokeyword.fragmentation.base.MySupportFragment;
 
 /**
  * Created by Administrator on 2018-09-13.

@@ -11,7 +11,7 @@ import com.example.wz1.ec.core.activites.ProxyActivity;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import me.yokeyword.fragmentation.Base.MySupportFragment;
+import me.yokeyword.fragmentation.base.MySupportFragment;
 
 /**
  * Created by wz on 2018/9/1.

@@ -20,9 +20,9 @@ import com.example.wz1.mysigninapplication.listener.OnItemClickListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.yokeyword.fragmentation.Base.MySupportFragment;
 import me.yokeyword.fragmentation.ISupportActivity;
 import me.yokeyword.fragmentation.anim.DefaultHorizontalAnimator;
+import me.yokeyword.fragmentation.base.MySupportFragment;
 
 /**
  * Created by Administrator on 2018-08-23.

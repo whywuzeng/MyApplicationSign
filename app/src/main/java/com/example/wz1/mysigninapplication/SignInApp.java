@@ -5,6 +5,7 @@ import android.app.Application;
 import com.example.wz1.ec.core.app.ECApp;
 import com.example.wz1.ec.core.interceptor.DebugInterceptor;
 import com.example.wz1.ec.shop.databasemanager.DatabaseManager;
+import com.example.wz1.mysigninapplication.font.IconEcModule;
 import com.example.wz1.mysigninapplication.font.IconTianModule;
 import com.facebook.stetho.Stetho;
 import com.joanzapata.iconify.fonts.FontAwesomeModule;
@@ -32,11 +33,12 @@ public class SignInApp extends Application {
 
         DatabaseManager.getInstanse().init(this);
 
-        ECApp.init(this).configureApiHost("http://127.0.0.0/")
+        ECApp.init(this).configureApiHost("http://192.168.1.105:88/")
                 .withInterceptor(new DebugInterceptor("http://127.0.0.0",R.raw.test))
                 .withIcon(new FontAwesomeModule())
                 .withIcon(new IconTianModule())
                 .withIcon(new IoniconsModule())
+                .withIcon(new IconEcModule())
                 .configure();
 
         //一个configure class 配置类 集成各种 配置信息

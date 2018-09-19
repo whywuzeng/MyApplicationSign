@@ -27,57 +27,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <android.support.constraint.ConstraintLayout
+        <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:orientation="horizontal"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-           <com.joanzapata.iconify.widget.IconTextView
-               android:id="@+id/icon_index"
-               app:layout_constraintLeft_toLeftOf="parent"
-               app:layout_constraintTop_toTopOf="parent"
-               app:layout_constraintBottom_toBottomOf="parent"
-               android:text="{fa-bullhorn}"
-               android:textSize="20sp"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"/>
 
-            <android.support.v7.widget.AppCompatTextView
-                app:layout_constraintLeft_toRightOf="@+id/icon_index"
-                app:layout_constraintRight_toLeftOf="@+id/search_index"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:id="@+id/tv_index"
-                 android:text="我的主页"
-                 android:textColor="@android:color/black"
-                android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            <com.joanzapata.iconify.widget.IconTextView
+                android:padding="3dp"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="{icon-scan}"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
 
             <android.support.v7.widget.SearchView
                 android:id="@+id/search_index"
-                app:layout_constraintLeft_toRightOf="@+id/tv_index"
-                app:layout_constraintRight_toLeftOf="@+id/icon_end_index"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_weight="4"
+                android:layout_gravity="center"
                 android:layout_width="0dp"
                 android:gravity="right"
                 android:layout_alignParentEnd="true"
-                android:layout_height="35dp"/>
+                android:layout_height="40dp"/>
 
             <com.joanzapata.iconify.widget.IconTextView
-                app:layout_constraintLeft_toLeftOf="@+id/search_index"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:id="@+id/icon_end_index"
-                android:text="{fa-bullhorn}"
-                android:textSize="20sp"
-                android:layout_alignParentEnd="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                tools:text="{icon-my}"
+                android:text="{icon-my}"
+                android:padding="3dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="25sp"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
 
-        </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.LinearLayoutCompat>
     </android.support.v7.widget.Toolbar>
 
 </android.support.design.widget.CoordinatorLayout>

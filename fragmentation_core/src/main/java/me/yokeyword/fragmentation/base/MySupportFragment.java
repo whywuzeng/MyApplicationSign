@@ -1,4 +1,4 @@
-package me.yokeyword.fragmentation.Base;
+package me.yokeyword.fragmentation.base;
 
 import android.app.Activity;
 import android.content.Intent;

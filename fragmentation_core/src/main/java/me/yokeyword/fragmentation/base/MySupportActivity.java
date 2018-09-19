@@ -1,4 +1,4 @@
-package me.yokeyword.fragmentation.Base;
+package me.yokeyword.fragmentation.base;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,12 +13,11 @@ import me.yokeyword.fragmentation.SupportActivityDelegate;
 import me.yokeyword.fragmentation.SupportHelper;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
-
 /**
  * 展示自定制的MySupportActivity，不继承SupportActivity
  * Created by YoKey on 17/6/24.
  */
-public class MySupportActivity extends AppCompatActivity implements ISupportActivity {
+public class MySupportActivity extends AppCompatActivity implements ISupportActivity{
     final SupportActivityDelegate mDelegate = new SupportActivityDelegate(this);
 
     @Override
@@ -26,7 +25,7 @@ public class MySupportActivity extends AppCompatActivity implements ISupportActi
         return mDelegate;
     }
 
-    /**o
+    /**
      * Perform some extra transactions.
      * 额外的事务：自定义Tag，添加SharedElement动画，操作非回退栈Fragment
      */

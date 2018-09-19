@@ -7,7 +7,8 @@ import android.support.v7.widget.ContentFrameLayout;
 import com.example.wz1.ec.core.R;
 import com.example.wz1.ec.core.delegate.BaseDelegate;
 
-import me.yokeyword.fragmentation.Base.MySupportActivity;
+import me.yokeyword.fragmentation.base.MySupportActivity;
+
 
 /**
  * Created by wz on 2018/9/1.

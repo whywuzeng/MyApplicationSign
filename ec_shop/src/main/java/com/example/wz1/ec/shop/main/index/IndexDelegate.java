@@ -1,5 +1,6 @@
 package com.example.wz1.ec.shop.main.index;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.MenuItemCompat;
@@ -7,17 +8,11 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.wz1.ec.core.delegate.bottom.BaseItemBottomDelegate;
-import com.example.wz1.ec.core.net.RestClient;
-import com.example.wz1.ec.core.net.back.IError;
-import com.example.wz1.ec.core.net.back.IFailure;
-import com.example.wz1.ec.core.net.back.IRequest;
-import com.example.wz1.ec.core.net.back.ISucess;
 import com.example.wz1.ec.shop.R;
 import com.example.wz1.ec.shop.R2;
 
@@ -40,10 +35,21 @@ public class IndexDelegate extends BaseItemBottomDelegate {
     @BindView(R2.id.tb_index)
     Toolbar tbIndex;
 
+    private SwipeHandle swipeHandle;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+    }
+
+    @SuppressLint("ResourceAsColor")
+    public void initSwipeRefresh() {
+        srlIndex.setColorSchemeColors(
+                android.R.color.holo_blue_dark,
+                android.R.color.holo_red_dark
+        );
+        srlIndex.setProgressViewOffset(true, 80, 120);
     }
 
     @Override
@@ -54,40 +60,9 @@ public class IndexDelegate extends BaseItemBottomDelegate {
 
     @Override
     public void BindView(@Nullable Bundle savedInstanceState) {
-//        ActionBar actionBar = ((AppCompatActivity) _mActivity).getSupportActionBar();
-//        actionBar.show();
-
-        RestClient build = new RestClient.RestClientBuild().url("")
-                .params("", "")
-                .context(_mActivity)
-                .request(new IRequest() {
-                    @Override
-                    public void onRequestStart() {
-                        Log.e(TAG, "onRequestStart:");
-                    }
-
-                    @Override
-                    public void onRequestComplete() {
-                        Log.e(TAG, "onRequestComplete: ");
-                    }
-                }).error(new IError() {
-                    @Override
-                    public void onError(int code, String message) {
-                        Log.e(TAG, "onError: " + message);
-                    }
-                }).failure(new IFailure() {
-                    @Override
-                    public void onFailure(Throwable t) {
-                        Log.e(TAG, "onFailure: " + t.getLocalizedMessage());
-                    }
-                }).sucess(new ISucess() {
-                    @Override
-                    public void onSucess(String result) {
-//                        Toast.makeText(_mActivity, result, Toast.LENGTH_SHORT).show();
-
-                    }
-                }).build();
-        build.get();
+        swipeHandle = new SwipeHandle();
+        swipeHandle.initSwipeRefresh(srlIndex);
+        swipeHandle.firstPage("index.php");
     }
 
     @Override
@@ -98,3 +73,4 @@ public class IndexDelegate extends BaseItemBottomDelegate {
         SearchView actionView = (SearchView) MenuItemCompat.getActionView(item);
     }
 }
+
