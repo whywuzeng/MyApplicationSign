@@ -48,7 +48,6 @@ public class SwipeHandle implements SwipeRefreshLayout.OnRefreshListener{
                         IndexDataConverter indexDataConverter = new IndexDataConverter();
                         indexDataConverter.setJsonData(result);
                         ArrayList<MultipleItemEntity> itemEntityList = indexDataConverter.getItemEntityList();
-                        itemEntityList.get(1).getField(MultipleFields.IMAGE_URL);
                         ToastUtils.showShort((String) itemEntityList.get(1).getField(MultipleFields.IMAGE_URL));
                     }
                 }).failure(new IFailure() {
