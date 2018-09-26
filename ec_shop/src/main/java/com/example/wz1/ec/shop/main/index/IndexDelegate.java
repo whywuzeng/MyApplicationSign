@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -13,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.wz1.ec.core.delegate.bottom.BaseItemBottomDelegate;
+import com.example.wz1.ec.core.ui.refresh.PagingBean;
 import com.example.wz1.ec.shop.R;
 import com.example.wz1.ec.shop.R2;
 
@@ -52,6 +54,11 @@ public class IndexDelegate extends BaseItemBottomDelegate {
         srlIndex.setProgressViewOffset(true, 80, 120);
     }
 
+    public void initRecycleView(){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(_mActivity);
+        reyIndex.setLayoutManager(linearLayoutManager);
+    }
+
     @Override
     public Object setLayout() {
 
@@ -61,8 +68,9 @@ public class IndexDelegate extends BaseItemBottomDelegate {
     @Override
     public void BindView(@Nullable Bundle savedInstanceState) {
         initSwipeRefresh();
+        initRecycleView();
         swipeHandle = new SwipeHandle();
-        swipeHandle.initSwipeRefresh(srlIndex);
+        swipeHandle.initSwipeRefresh(srlIndex,reyIndex,new PagingBean(),new IndexDataConverter());
         swipeHandle.firstPage("index.php");
     }
 

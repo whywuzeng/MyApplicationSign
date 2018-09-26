@@ -2,11 +2,12 @@
 <android.support.v7.widget.AppCompatTextView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:textColor="@android:color/black"
-    android:textSize="24sp"
-    android:gravity="center"
-    tools:text="测试字体"
+    android:id="@+id/tv_single"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:textSize="24sp"
+    android:textColor="@android:color/black"
+    tools:text="测试字体">
 
 </android.support.v7.widget.AppCompatTextView>

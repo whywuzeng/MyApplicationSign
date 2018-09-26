@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:scaleType="fitCenter"
     tools:src="@drawable/fragmentation_ic_stack"
+    android:id="@+id/img_single"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 

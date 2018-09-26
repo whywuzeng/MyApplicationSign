@@ -15,8 +15,9 @@ public abstract class DataConverter {
 
     private String JsonData=null;
 
-    public void setJsonData(String jsonData) {
+    public DataConverter setJsonData(String jsonData) {
         JsonData = jsonData;
+        return this;
     }
 
     public String getJsonData() throws Exception {

@@ -23,7 +23,7 @@ public class MultipleItemEntity implements MultiItemEntity{
     //最后一个 type 只对应 ItemTYpe
     @Override
     public int getItemType() {
-        return (int) FIELDS_REFERENCE.get().get(MULTIPLE_FIELDS.get(MultipleFields.ITEM_TYPE));
+        return (int) FIELDS_REFERENCE.get().get(MultipleFields.ITEM_TYPE);
     }
 
     public final <T> T getField(Object key)
@@ -44,6 +44,12 @@ public class MultipleItemEntity implements MultiItemEntity{
         public MultipleItemEntityBuild(){
             //把之前的数据清空
             MULTIPLE_FIELDS.clear();
+        }
+
+        public final MultipleItemEntityBuild putItemType(int values)
+        {
+            MULTIPLE_FIELDS.put(MultipleFields.ITEM_TYPE,values);
+            return this;
         }
 
         public final MultipleItemEntityBuild putNameValues(String values){

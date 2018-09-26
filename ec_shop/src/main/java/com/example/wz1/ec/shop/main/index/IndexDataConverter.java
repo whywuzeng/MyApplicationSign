@@ -58,7 +58,9 @@ public class IndexDataConverter extends DataConverter{
                 }
             }
 
-            MultipleItemEntity build = new MultipleItemEntity.MultipleItemEntityBuild().putBannersValues(bannerslist)
+            MultipleItemEntity build = new MultipleItemEntity.MultipleItemEntityBuild()
+                    .putItemType(type)
+                    .putBannersValues(bannerslist)
                     .putImageUrlValues(images)
                     .putTextValues(text)
                     .putSpansizeValues(spanSize)
