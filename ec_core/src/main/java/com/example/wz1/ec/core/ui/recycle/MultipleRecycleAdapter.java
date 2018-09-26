@@ -4,6 +4,7 @@ import android.support.v7.widget.GridLayoutManager;
 
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.example.wz1.ec.core.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +23,9 @@ public class MultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MultipleIt
     }
 
     private void init() {
-
+        addItemType(ItemType.TEXT, R.layout.item_multiple_text);
+        addItemType(ItemType.IMAGE_URL,R.layout.item_multiple_image);
+        addItemType(ItemType.TEXT_IMAGE,R.layout.item_multiple_textimage);
     }
 
     public static MultipleRecycleAdapter create(List<MultipleItemEntity> data){
