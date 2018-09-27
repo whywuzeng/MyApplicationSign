@@ -22,7 +22,6 @@ import java.util.List;
 
 public class MultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MultipleItemEntity, MultipleViewHolder> implements BaseQuickAdapter.SpanSizeLookup {
 
-
     private boolean isFirst = true;
 
     protected MultipleRecycleAdapter(List<MultipleItemEntity> data) {
@@ -37,6 +36,7 @@ public class MultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MultipleIt
         addItemType(ItemType.BANNAR, R.layout.item_multiple_bannar);
         openLoadAnimation();
         setSpanSizeLookup(this);
+        isFirstOnly(true); //第一次加载时显示
 
     }
 

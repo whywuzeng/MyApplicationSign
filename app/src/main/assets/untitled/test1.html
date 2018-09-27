@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>新建网页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <script type="text/javascript">
+        var student =['wuzeng','wuzeng1','wuzeng2','wuzeng','wuzeng3'];
+
+        Array.prototype.remove=function(dx)
+        {
+            if(isNaN(dx)||dx>this.length){return false;}
+            for(var i=0,n=0;i<this.length;i++)
+            {
+                if(this[i]!=this[dx])
+                {
+                    this[n++]=this[i]
+                }
+            }
+            this.length-=1
+        }
+
+        function Unique (arr) {
+            var arrcopy=arr;
+            for (var i=0;i<arr.length;i++)
+            {
+                for (var j=i+1;j<arr.length;j++)
+                {
+                    if (i!=j&&arr[i]==arr[j])
+                    {
+                        //删除i个元素
+                        arrcopy.remove(i);
+                    }
+                }
+            }
+
+            return arrcopy;
+        }
+
+        function test() {
+            var n=0
+            var strs=['a','b','c']
+            console.log(strs[n++]);
+            console.log(n)
+        }
+
+      var result= Unique(student);
+        test();
+        console.log(result);
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>

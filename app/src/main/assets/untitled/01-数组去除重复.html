@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>新建网页</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+        <script type="text/javascript">
+        //为Array增加一个方法，删除重复的元素(只保留一个)
+        //例如var student = ['qiang','ming','tao','li','liang','you','qiang','tao'];
+        //有一个函数，可以删除数组里边重复的元素，只保留一个。
+
+        //push()  给数组追加元素
+        //① 创建一个新的数组，把目录数组元素追加到新数组里边
+        //    条件：追加过的元素不能再重复追加
+        //② 判断元素是否已经被追加
+            /*
+                newarr['qiang'] = true;
+                newarr['ming'] = true;
+                newarr['tao'] = true
+                ....
+                if(typeof(newarr[下标]) == "undefined")
+                    newarr[下标] = 1；
+            */
+    var student = ['qiang','ming','tao','li','liang','you','qiang','tao'];
+    function unique(arr){
+        //遍历arr，把元素追加到一个新的数组里边
+        var newarr = new Array();
+        for(var i=0; i<arr.length; i++){
+            //判断，之前追加过的元素不能重复追加
+            //in_array() 判断数组是否存在目标
+
+            //newarr.push(arr[i]);
+            var m = arr[i];
+            if(typeof(newarr[m]) == "undefined"){
+                newarr[m] = 1;
+            }
+        }
+        //newarr的样子
+        var info = new Array();//数组元素都是唯一的
+        for(var k in newarr){
+            info.push(k);
+        }
+        return info;
+    }
+    var rzt = unique(student);
+    console.log(rzt);
+
+        </script>
+
+        <style type="text/css">
+        </style>
+    </head>
+
+
+    <body>
+
+    </body>
+</html>
