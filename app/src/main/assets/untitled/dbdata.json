@@ -8,26 +8,24 @@
       "goodsId": "0",
       "spanSize": "4",
       "banners": [
-        [
           "http://i8.mifile.cn/v1/a1/25f8a23f-de0e-c948-3d71-90238ec37e7a!720x360.webp",
           "http://i8.mifile.cn/v1/a1/7abbeb82-f73c-8207-9622-2fe481a5f22b!720x360.webp",
           "http://i8.mifile.cn/v1/a1/d9063bcc-2cda-870d-1b94-f52bf8b622e1!720x360.webp"
-        ]
       ]
     },
     {
       "goodsId": 0,
       "text": "门共利权议做",
       "images": [
-        "//i8.mifile.cn/v1/a1/23953b08-0df3-061a-976b-edc6f9cc3db9!358x252.webp",
+        "http://i8.mifile.cn/v1/a1/23953b08-0df3-061a-976b-edc6f9cc3db9!358x252.webp",
         "http://i8.mifile.cn/v1/a1/45f1e726-9a1c-c2e2-881f-93d215e08a44!358x508.webp",
-        "//i8.mifile.cn/v1/a1/f4625925-e0be-95b3-0b3b-de75a8f7dd06!358x252.webp"
-      ]
+        "http://i8.mifile.cn/v1/a1/f4625925-e0be-95b3-0b3b-de75a8f7dd06!358x252.webp"
+      ],
       "spanSize": "4"
     },
     {
       "goodsId": 1,
-      "images": "http:////cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/852762f49eb129efb02628f276ddb00f.jpg?thumb=1&w=720&h=280",
+      "images": "http://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/852762f49eb129efb02628f276ddb00f.jpg?thumb=1&w=720&h=280",
       "spanSize": "4"
     },
     {
@@ -93,6 +91,7 @@
       "desc": "共车统计元况老华法油体学们。直六感色社次现党不眼持只。力件金书节来最难长当品格事",
       "tag": "存起那之感严",
       "views": 3678,
+      "spanSize": "2",
       "images": [
         "http://dummyimage.com/200x100/f27c79&text=tium",
         "http://dummyimage.com/200x100/7998f2&text=nfjw"
@@ -104,6 +103,7 @@
       "email": "x.nei@tdocmhfwo.at",
       "phone": 10425989000,
       "password": 13778024044,
+      "spanSize": "2",
       "title": "运拉和增作非权圆位头道心也面单省认往强",
       "desc": "色列转边规式道界有认活则派表保。",
       "tag": "开天几计",
@@ -118,6 +118,7 @@
       "email": "g.orlsrfmfk@mvjqjczfd.cy",
       "phone": 15374339489,
       "password": 5044822972,
+      "spanSize": "2",
       "title": "其结志想完机带花行支党音更气",
       "desc": "选电花更较两然化接位信广难族说身方。规参该状二我据务金以只而向管。克本眼直月油将",
       "tag": "作力起及马",
@@ -131,6 +132,7 @@
       "name": "书进行今",
       "email": "n.pgteqm@angbchuovl.lv",
       "phone": 16896083994,
+      "spanSize": "2",
       "password": 1991919906,
       "title": "程任本清老县做表区",
       "desc": "四需基开题深张无又革况文该。往生消集约队率属持名政成系参民气。技交究品众作精方高",
@@ -145,6 +147,7 @@
       "name": "按要劳",
       "email": "s.gnhkx@cer.vu",
       "phone": 13743680535,
+      "spanSize": "2",
       "password": 1447335493,
       "title": "得重者定片已术不术事矿在们保养按带关龙",
       "desc": "少声品石己关做界总比装收十证和制号义。亲对物段周山明少美天多还何。",
@@ -160,6 +163,7 @@
       "name": "共代南期",
       "email": "t.mvszlb@sbliuvf.az",
       "phone": 16833314560,
+      "spanSize": "2",
       "password": 3779719118,
       "title": "想图温反么原西保识年整际应",
       "desc": "体书身外议己备矿省理便及调素。米重示学过军入内最形活与件。",
@@ -175,6 +179,7 @@
       "name": "受果克运示",
       "email": "s.tfdmiyred@ugadglgnkt.fi",
       "phone": 18916056400,
+      "spanSize": "2",
       "password": 14640420256,
       "title": "千比党离到美压交用可群我同分见习术",
       "desc": "保别层结马满报知细只并温办质感法。又业热片效全水面马连表被几区收要。原发正算满太",
@@ -190,6 +195,7 @@
       "email": "c.pwximo@fklk.zr",
       "phone": 12621646319,
       "password": 13064763742,
+      "spanSize": "2",
       "title": "示美外次京金价状",
       "desc": "也运生治或为元火况作转决委。低地非期该标广性进毛调权则反便林从车。世议持流西求识",
       "tag": "件对着",
@@ -205,6 +211,7 @@
       "email": "d.yschll@mhq.ke",
       "phone": 16883187506,
       "password": 9774623917,
+      "spanSize": "2",
       "title": "何料热什办列交身生志",
       "desc": "战千七以性象西再决具眼加便品务。却建海多问外华面理规位马来的酸器界。员点派就件比",
       "tag": "改见",
@@ -219,6 +226,7 @@
       "email": "q.gcbktfjc@luwworjf.tj",
       "phone": 18934211523,
       "password": 18061233146,
+      "spanSize": "2",
       "title": "路质律厂六题头府示与外四提被属断做划",
       "desc": "石地院而百你收共便你满展而越合其我千。才备由里整内中必身温实往选级。命位立边此必",
       "tag": "便样相",

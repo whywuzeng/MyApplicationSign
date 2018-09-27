@@ -3,8 +3,10 @@ package com.example.wz1.ec.shop.main.index;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -13,7 +15,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.blankj.utilcode.util.ConvertUtils;
 import com.example.wz1.ec.core.delegate.bottom.BaseItemBottomDelegate;
+import com.example.wz1.ec.core.ui.recycle.BaseItemDecoration;
 import com.example.wz1.ec.core.ui.refresh.PagingBean;
 import com.example.wz1.ec.shop.R;
 import com.example.wz1.ec.shop.R2;
@@ -55,8 +59,9 @@ public class IndexDelegate extends BaseItemBottomDelegate {
     }
 
     public void initRecycleView(){
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(_mActivity);
+        LinearLayoutManager linearLayoutManager = new GridLayoutManager(_mActivity,4);
         reyIndex.setLayoutManager(linearLayoutManager);
+        reyIndex.addItemDecoration(BaseItemDecoration.create(ContextCompat.getColor(getContext(),R.color.app_backgroud), ConvertUtils.px2dp(4)));
     }
 
     @Override

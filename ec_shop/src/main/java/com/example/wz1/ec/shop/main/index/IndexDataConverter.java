@@ -63,7 +63,7 @@ public class IndexDataConverter extends DataConverter{
                     .putBannersValues(bannerslist)
                     .putImageUrlValues(images)
                     .putTextValues(text)
-                    .putSpansizeValues(spanSize)
+                    .putSpansizeValues(Integer.valueOf(spanSize))
                     .putField(MultipleFields.ID, goodsId).build();
             list.add(build);
 

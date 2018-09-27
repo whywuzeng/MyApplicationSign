@@ -14,6 +14,8 @@ import com.example.wz1.ec.shop.sign.SignInDelegate;
 import com.example.wz1.ec.shop.sign.SignInTag;
 import com.example.wz1.mysigninapplication.delegate.HomeDelegate;
 
+import qiu.niorgai.StatusBarCompat;
+
 /**
  * Created by wz on 2018/9/1.
  * EC 主Activity
@@ -29,7 +31,7 @@ public class Main2Activity extends ProxyActivity implements ISignInListener,ILau
         {
             actionBar.hide();
         }
-
+        StatusBarCompat.translucentStatusBar(this,true);
     }
 
     @Override

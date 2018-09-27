@@ -81,7 +81,7 @@ public class MultipleItemEntity implements MultiItemEntity{
             return this;
         }
 
-        public final MultipleItemEntityBuild putSpansizeValues(String spansize)
+        public final MultipleItemEntityBuild putSpansizeValues(int spansize)
         {
             MULTIPLE_FIELDS.put(MultipleFields.SPAN_SIZE,spansize);
             return this;

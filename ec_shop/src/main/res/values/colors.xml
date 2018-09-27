@@ -2,4 +2,5 @@
 <resources>
     <color name="colorAccent">#FF4081</color>
     <color name="colorGreen">#04b00f</color>
+    <color name="app_backgroud">#1111</color>
 </resources>

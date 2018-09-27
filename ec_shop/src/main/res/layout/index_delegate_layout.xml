@@ -23,9 +23,10 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/tb_index"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="com.example.wz1.ec.shop.main.index.TranslucentBehavior">
 
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"

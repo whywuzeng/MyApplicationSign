@@ -5,6 +5,7 @@ import android.support.v7.widget.AppCompatImageView;
 import android.view.View;
 
 import com.bigkoo.convenientbanner.holder.Holder;
+import com.blankj.utilcode.util.ConvertUtils;
 import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.wz1.ec.core.utils.glide.GlideUtils;
@@ -25,8 +26,8 @@ public class ImageHolder implements Holder<String> {
 
     @Override
     public void UpdateUI(Context context, int position, String data) {
-        GlideUtils.loadDefaultTransformation(data, appCompatImageView, false,
-                DecodeFormat.PREFER_ARGB_8888, null, DiskCacheStrategy.ALL);
+        GlideUtils.loadDefaultOverrideNoAnim(data, appCompatImageView, ConvertUtils.px2dp(720f),ConvertUtils.px2dp(360f),false,
+                DecodeFormat.PREFER_ARGB_8888,  DiskCacheStrategy.ALL);
 
 //        Glide.with(context)
 //                .load(data)
