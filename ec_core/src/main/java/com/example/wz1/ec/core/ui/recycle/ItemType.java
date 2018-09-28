@@ -10,4 +10,5 @@ public class ItemType {
     public final static int BANNAR=2;
     public final static int ID=3;
     public final static int TEXT_IMAGE=4;
+    public final static int VERTICAL_LIST=5;
 }

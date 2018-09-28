@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public abstract class DataConverter {
     protected ArrayList<MultipleItemEntity> list=new ArrayList<>();
 
-    protected abstract ArrayList<MultipleItemEntity> getItemEntityList();
+    protected abstract ArrayList<MultipleItemEntity> getItemEntityList() ;
 
     private String JsonData=null;
 

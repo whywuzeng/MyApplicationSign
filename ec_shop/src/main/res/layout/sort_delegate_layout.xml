@@ -1,19 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.v7.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
-        android:layout_height="150dp"/>
+        android:background="@android:color/holo_orange_light"
+        android:gravity="center"
+        android:layout_height="50dp">
 
-    <Button
-        android:id="@+id/btn_click"
-        android:text="点击出厂动画"
+        <android.support.v7.widget.AppCompatTextView
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:paddingTop="6dp"
+            android:text="分类"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:orientation="horizontal"
+        android:background="@color/app_backgroud"
+        android:baselineAligned="true"
         android:layout_width="match_parent"
-        android:layout_height="100dp"/>
+        android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+        <android.support.v7.widget.ContentFrameLayout
+            android:id="@+id/vertical_list_container"
+            android:layout_weight="1.5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.ContentFrameLayout>
+
+        <android.support.v7.widget.ContentFrameLayout
+            android:id="@+id/sort_content_container"
+            android:layout_marginStart="8dp"
+            android:layout_weight="4"
+            android:layout_marginEnd="8dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.ContentFrameLayout>
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+</android.support.v7.widget.LinearLayoutCompat>

@@ -5,4 +5,10 @@ package com.example.wz1.ec.core.delegate;
  * Created by wz on 2018/9/1.
  */
 public abstract class CheckDelegate extends BaseDelegate {
+
+    public <T extends BaseDelegate> T getParentDelegate(){
+
+        T parentFragment = (T) getParentFragment();
+        return parentFragment;
+    }
 }

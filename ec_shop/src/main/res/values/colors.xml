@@ -3,4 +3,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorGreen">#04b00f</color>
     <color name="app_backgroud">#1111</color>
+    <color name="app_text_color">#020202</color>
+    <color name="app_item_color">#323232</color>
+    <color name="item_background">#F1F1F1</color>
 </resources>

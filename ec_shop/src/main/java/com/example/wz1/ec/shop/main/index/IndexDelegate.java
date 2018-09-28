@@ -16,6 +16,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.blankj.utilcode.util.ConvertUtils;
+import com.example.wz1.ec.core.delegate.BaseDelegate;
 import com.example.wz1.ec.core.delegate.bottom.BaseItemBottomDelegate;
 import com.example.wz1.ec.core.ui.recycle.BaseItemDecoration;
 import com.example.wz1.ec.core.ui.refresh.PagingBean;
@@ -62,6 +63,8 @@ public class IndexDelegate extends BaseItemBottomDelegate {
         LinearLayoutManager linearLayoutManager = new GridLayoutManager(_mActivity,4);
         reyIndex.setLayoutManager(linearLayoutManager);
         reyIndex.addItemDecoration(BaseItemDecoration.create(ContextCompat.getColor(getContext(),R.color.app_backgroud), ConvertUtils.px2dp(4)));
+        BaseDelegate parentDelegate = getParentDelegate();
+        reyIndex.addOnItemTouchListener(IndexItemClickListener.create(parentDelegate));
     }
 
     @Override
