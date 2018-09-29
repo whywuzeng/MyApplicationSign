@@ -3,14 +3,19 @@ package com.example.wz1.ec.shop.main.sort.list;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 
+import com.example.wz1.ec.core.delegate.BaseDelegate;
+import com.example.wz1.ec.core.ui.recycle.DataConverter;
 import com.example.wz1.ec.core.ui.recycle.ItemType;
 import com.example.wz1.ec.core.ui.recycle.MultipleFields;
 import com.example.wz1.ec.core.ui.recycle.MultipleItemEntity;
 import com.example.wz1.ec.core.ui.recycle.MultipleRecycleAdapter;
 import com.example.wz1.ec.core.ui.recycle.MultipleViewHolder;
 import com.example.wz1.ec.shop.R;
+import com.example.wz1.ec.shop.main.sort.content.SortContentDelegate;
 
-import java.util.List;
+import java.util.ArrayList;
+
+import me.yokeyword.fragmentation.SupportHelper;
 
 /**
  * Created by wz on 2018/9/28.
@@ -19,10 +24,17 @@ import java.util.List;
 public class VerticalListAdapter extends MultipleRecycleAdapter{
 
     private int prePosition=0;
+    private BaseDelegate delegate;
 
-    protected VerticalListAdapter(List<MultipleItemEntity> data) {
+    protected VerticalListAdapter(ArrayList<MultipleItemEntity> data, BaseDelegate delegate) {
         super(data);
         addItemType(ItemType.VERTICAL_LIST, R.layout.item_verticallist);
+        this.delegate=delegate;
+    }
+
+    protected static VerticalListAdapter create(DataConverter data, BaseDelegate delegate) {
+        ArrayList<MultipleItemEntity> itemEntityList = data.getItemEntityList();
+       return new VerticalListAdapter(itemEntityList,delegate);
     }
 
     @Override
@@ -51,6 +63,14 @@ public class VerticalListAdapter extends MultipleRecycleAdapter{
                         notifyItemChanged(prePosition);
 
                         prePosition=currentPosition;
+
+                        Integer fieldid = (Integer) item.getField(MultipleFields.ID);
+                        SortContentDelegate contentDelegate = SupportHelper.findFragment(delegate.getChildFragmentManager(), SortContentDelegate.class);
+                        if (contentDelegate!=null)
+                        {
+                            contentDelegate.getSupportDelegate().replaceFragment(SortContentDelegate.newInstance(fieldid),false);
+                        }
+
                     }
                 });
                 break;
@@ -58,6 +78,5 @@ public class VerticalListAdapter extends MultipleRecycleAdapter{
 
                 break;
         }
-
     }
 }

@@ -6,4 +6,9 @@
     <color name="app_text_color">#020202</color>
     <color name="app_item_color">#323232</color>
     <color name="item_background">#F1F1F1</color>
+
+    <!--18sp字体的颜色-->
+    <color name="s18spcolor">#54000000</color>
+    <!--24sp字体颜色-->
+    <color name="s24spcolor">#3c3c3c</color>
 </resources>

@@ -42,6 +42,12 @@ public class VerticalListDelegate extends CheckDelegate {
     }
 
     @Override
+    public void onSupportVisible() {
+        super.onSupportVisible();
+
+    }
+
+    @Override
     public void onLazyInitView(@Nullable Bundle savedInstanceState) {
         super.onLazyInitView(savedInstanceState);
         RestClient build = new RestClient.RestClientBuild()
@@ -50,7 +56,7 @@ public class VerticalListDelegate extends CheckDelegate {
                 .sucess(new ISucess() {
                     @Override
                     public void onSucess(String result) {
-                        MultipleRecycleAdapter multipleRecycleAdapter = VerticalListAdapter.create(new VerticalListDataConverter().setJsonData(result));
+                        MultipleRecycleAdapter multipleRecycleAdapter =   VerticalListAdapter.create(new VerticalListDataConverter().setJsonData(result),getParentDelegate());
                         recyVerticallist.setAdapter(multipleRecycleAdapter);
                     }
                 })

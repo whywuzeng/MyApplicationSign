@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.example.wz1.ec.core.ui.recycle.DataConverter;
+import com.example.wz1.ec.core.ui.recycle.ItemType;
 import com.example.wz1.ec.core.ui.recycle.MultipleFields;
 import com.example.wz1.ec.core.ui.recycle.MultipleItemEntity;
 
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 public class VerticalListDataConverter extends DataConverter{
 
     @Override
-    protected ArrayList<MultipleItemEntity> getItemEntityList()   {
+    public ArrayList<MultipleItemEntity> getItemEntityList()   {
         String jsonData = null;
         try {
             jsonData = getJsonData();
@@ -34,7 +35,9 @@ public class VerticalListDataConverter extends DataConverter{
             String name = jsonObject1.getString("name");
 
 
-            MultipleItemEntity build = new MultipleItemEntity.MultipleItemEntityBuild().putField(MultipleFields.ID, id)
+            MultipleItemEntity build = new MultipleItemEntity.MultipleItemEntityBuild()
+                    .putItemType(ItemType.VERTICAL_LIST)
+                    .putField(MultipleFields.ID, id)
                     .putNameValues(name)
                     .putField(MultipleFields.TAG,false)
                     .build();
