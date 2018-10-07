@@ -45,7 +45,12 @@ public class MultipleRecycleAdapter extends BaseMultiItemQuickAdapter<MultipleIt
     }
 
     public static MultipleRecycleAdapter create(DataConverter data) {
-        ArrayList<MultipleItemEntity> list = data.getItemEntityList();
+        ArrayList<MultipleItemEntity> list = null;
+        try {
+            list = data.getItemEntityList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return new MultipleRecycleAdapter(list);
     }
 

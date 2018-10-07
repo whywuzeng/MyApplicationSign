@@ -33,8 +33,13 @@ public class VerticalListAdapter extends MultipleRecycleAdapter{
     }
 
     protected static VerticalListAdapter create(DataConverter data, BaseDelegate delegate) {
-        ArrayList<MultipleItemEntity> itemEntityList = data.getItemEntityList();
-       return new VerticalListAdapter(itemEntityList,delegate);
+        ArrayList<MultipleItemEntity> itemEntityList = null;
+        try {
+            itemEntityList = data.getItemEntityList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new VerticalListAdapter(itemEntityList,delegate);
     }
 
     @Override
@@ -50,7 +55,7 @@ public class VerticalListAdapter extends MultipleRecycleAdapter{
                 {
                     holder.itemView.setBackgroundColor(ContextCompat.getColor(mContext,R.color.item_background));
                 }else {
-                    holder.itemView.setBackgroundColor(ContextCompat.getColor(mContext,R.color.app_item_color));
+                    holder.itemView.setBackgroundColor(ContextCompat.getColor(mContext,R.color.s24spcolor));
                 }
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override

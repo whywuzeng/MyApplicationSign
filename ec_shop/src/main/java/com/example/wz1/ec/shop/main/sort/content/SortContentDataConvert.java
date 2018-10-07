@@ -20,7 +20,7 @@ public class SortContentDataConvert {
 
     public ArrayList<BaseSection> getArrayListItem(String json) {
         JSONObject object2 = JSON.parseObject(json);
-        JSONArray data = object2.parseArray("data");
+        JSONArray data = object2.getJSONArray("data");
         int size = data.size();
         for (int i=0;i<size;i++)
         {
