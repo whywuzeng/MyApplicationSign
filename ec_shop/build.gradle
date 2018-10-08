@@ -30,4 +30,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     api project(':ec_core')
+    //圆形图片
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
 }

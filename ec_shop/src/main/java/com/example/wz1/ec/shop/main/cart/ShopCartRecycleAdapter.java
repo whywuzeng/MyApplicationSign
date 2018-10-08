@@ -79,7 +79,7 @@ public class ShopCartRecycleAdapter extends MultipleRecycleAdapter{
                 boolean isSelect = item.getField(ShopCartFieldType.is_select);
                 if (isSelect)
                 {
-                    iconIsSelected.setTextColor(ECApp.getApplicationContext().getResources().getColor(R.color.app_toolbar_background));
+                    iconIsSelected.setTextColor(ECApp.getApplicationContext().getResources().getColor(R.color.app_main));
                 }else {
                     iconIsSelected.setTextColor(Color.GRAY);
                 }
@@ -93,7 +93,7 @@ public class ShopCartRecycleAdapter extends MultipleRecycleAdapter{
                             iconIsSelected.setTextColor(Color.GRAY);
                             item.setFields(ShopCartFieldType.is_select,false);
                         }else {
-                            iconIsSelected.setTextColor(ContextCompat.getColor(ECApp.getApplicationContext(),R.color.app_toolbar_background));
+                            iconIsSelected.setTextColor(ContextCompat.getColor(ECApp.getApplicationContext(),R.color.app_main));
                             item.setFields(ShopCartFieldType.is_select,true);
                         }
                     }

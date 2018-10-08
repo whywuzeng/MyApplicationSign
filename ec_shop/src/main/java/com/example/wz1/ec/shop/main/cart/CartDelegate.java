@@ -101,7 +101,7 @@ public class CartDelegate extends BaseItemBottomDelegate {
         {
             iconShopCartSelectAll.setTag(1);
             multipleRecycleAdapter.setSelectAll(true);
-            iconShopCartSelectAll.setTextColor(ContextCompat.getColor(ECApp.getApplicationContext(),R.color.app_toolbar_background));
+            iconShopCartSelectAll.setTextColor(ContextCompat.getColor(ECApp.getApplicationContext(),R.color.app_main));
             multipleRecycleAdapter.notifyItemRangeChanged(0,multipleRecycleAdapter.getItemCount());
         }else {
             iconShopCartSelectAll.setTag(0);

@@ -62,7 +62,7 @@ public class IndexDelegate extends BaseItemBottomDelegate {
     public void initRecycleView(){
         LinearLayoutManager linearLayoutManager = new GridLayoutManager(_mActivity,4);
         reyIndex.setLayoutManager(linearLayoutManager);
-        reyIndex.addItemDecoration(BaseItemDecoration.create(ContextCompat.getColor(getContext(),R.color.app_backgroud), ConvertUtils.px2dp(4)));
+        reyIndex.addItemDecoration(BaseItemDecoration.create(ContextCompat.getColor(getContext(),R.color.app_background), ConvertUtils.px2dp(4)));
         BaseDelegate parentDelegate = getParentDelegate();
         reyIndex.addOnItemTouchListener(IndexItemClickListener.create(parentDelegate));
     }

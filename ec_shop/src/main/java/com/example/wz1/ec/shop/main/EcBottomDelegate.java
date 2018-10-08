@@ -6,6 +6,7 @@ import com.example.wz1.ec.core.delegate.bottom.TableBean;
 import com.example.wz1.ec.shop.main.cart.CartDelegate;
 import com.example.wz1.ec.shop.main.discover.DiscoverDelegate;
 import com.example.wz1.ec.shop.main.index.IndexDelegate;
+import com.example.wz1.ec.shop.main.personal.PersonalDelegate;
 import com.example.wz1.ec.shop.main.sort.SortDelegate;
 
 import java.util.LinkedHashMap;
@@ -32,10 +33,12 @@ public class EcBottomDelegate extends BaseBottomDelegate {
         TableBean sortbean = new TableBean("分类", "{fa-sort}");
         TableBean cartbean = new TableBean("购物", "{icon-home}");
         TableBean discoverbean = new TableBean("发现", "{icon-tianmao}");
+        TableBean personalBean= new TableBean("个人","{fa-user}");
         map.put(indexbean,new IndexDelegate());
         map.put(sortbean,new SortDelegate());
         map.put(cartbean,new CartDelegate());
         map.put(discoverbean,new DiscoverDelegate());
+        map.put(personalBean,new PersonalDelegate());
         return map;
     }
 }

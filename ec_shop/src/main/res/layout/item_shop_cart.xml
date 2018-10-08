@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:typeface="monospace"
             tools:ignore="HardcodedText"
-            android:textColor="@color/app_toolbar_background"
+            android:textColor="@color/app_main"
             android:text="2.00"/>
     </LinearLayout>
 
