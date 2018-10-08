@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    app:divider="@drawable/ll_line"
+    app:showDividers="middle"
+    app:dividerPadding="2dp"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:paddingBottom="10dp"
+    >
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_loading_takePhoto"
+        android:text="拍照"
+        android:textColor="@color/we_chat_black"
+        android:gravity="center"
+        android:background="@drawable/btn_border_takephoto"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_photo_native"
+        android:text="本地"
+        android:textColor="@color/we_chat_black"
+        android:gravity="center"
+        android:background="@drawable/btn_border_nativephoto"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_photo_cancel"
+        android:text="取消"
+        android:textColor="@color/we_chat_black"
+        android:gravity="center"
+        android:background="@drawable/btn_border_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+</android.support.v7.widget.LinearLayoutCompat>

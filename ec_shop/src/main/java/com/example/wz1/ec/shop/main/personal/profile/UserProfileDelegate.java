@@ -56,7 +56,8 @@ public class UserProfileDelegate extends ECAppDelegate {
                 .setmText("性别")
                 .setmValue("未设置性别");
         ListItemBean brithday = new ListItemBean()
-                .setmItemType(4)
+                .setmItemType(ListItemType.ITEM_NORMAL)
+                .setmId(4)
                 .setmText("生日")
                 .setmValue("未设置生日");
 

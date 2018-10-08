@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorGreen">#04b00f</color>
+    <color name="app_background">#1111</color>
+    <color name="app_text_color">#020202</color>
+    <color name="we_chat_black">#323232</color>
+    <color name="item_background">#F1F1F1</color>
+    <color name="app_main">@android:color/holo_orange_dark</color>
+    <!--18sp字体的颜色-->
+    <color name="s18spcolor">#54000000</color>
+    <!--24sp字体颜色-->
+    <color name="s24spcolor">#3c3c3c</color>
+</resources>

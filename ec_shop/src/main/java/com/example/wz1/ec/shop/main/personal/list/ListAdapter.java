@@ -1,6 +1,5 @@
 package com.example.wz1.ec.shop.main.personal.list;
 
-import android.support.v7.widget.AppCompatImageView;
 import android.widget.CompoundButton;
 
 import com.bumptech.glide.load.DecodeFormat;
@@ -11,6 +10,8 @@ import com.example.wz1.ec.core.utils.glide.GlideUtils;
 import com.example.wz1.ec.shop.R;
 
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Administrator on 2018-10-08.
@@ -42,7 +43,7 @@ public class ListAdapter extends BaseMultiItemQuickAdapter<ListItemBean,BaseView
                 holder.setText(R.id.tv_arrow_value,item.getmValue());
                 break;
             case ListItemType.ITEM_AVATOR:
-                AppCompatImageView avatar = holder.getView(R.id.img_arrow_avatar);
+                CircleImageView avatar = holder.getView(R.id.img_arrow_avatar);
                 GlideUtils.loadDefaultNoAnim(item.getmImageUrl(),avatar,false, DecodeFormat.DEFAULT, DiskCacheStrategy.ALL);
                 break;
             case ListItemType.ITEM_SWITCH:

@@ -5,7 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.wz1.ec.core.delegate.CheckDelegate;
+import com.example.wz1.ec.core.delegate.ECAppDelegate;
 import com.example.wz1.ec.core.net.RestClient;
 import com.example.wz1.ec.core.net.back.IError;
 import com.example.wz1.ec.core.net.back.IFailure;
@@ -20,7 +20,7 @@ import butterknife.BindView;
  * Created by wz on 2018/9/28.
  */
 
-public class VerticalListDelegate extends CheckDelegate {
+public class VerticalListDelegate extends ECAppDelegate {
 
     @BindView(R2.id.recy_verticallist)
     RecyclerView recyVerticallist;

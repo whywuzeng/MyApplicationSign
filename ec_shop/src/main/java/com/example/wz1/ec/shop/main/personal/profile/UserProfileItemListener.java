@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
-import com.example.wz1.ec.core.delegate.BaseDelegate;
+import com.example.wz1.ec.core.delegate.CheckDelegate;
 import com.example.wz1.ec.shop.R;
 import com.example.wz1.ec.shop.main.personal.list.ListItemBean;
 
@@ -21,10 +21,10 @@ import com.example.wz1.ec.shop.main.personal.list.ListItemBean;
 
 class UserProfileItemListener extends SimpleClickListener {
 
-    private final BaseDelegate baseDelegate;
+    private final CheckDelegate baseDelegate;
     private String[] mGenders={"男","女","保密"};
 
-    public UserProfileItemListener(BaseDelegate delegate)
+    public UserProfileItemListener(CheckDelegate delegate)
     {
         this.baseDelegate=delegate;
     }
@@ -36,7 +36,7 @@ class UserProfileItemListener extends SimpleClickListener {
         switch (mId)
         {
             case 1:
-
+                baseDelegate.checkCamera();
                 break;
             case 2:
                 baseDelegate.start(bean.getDelegate());

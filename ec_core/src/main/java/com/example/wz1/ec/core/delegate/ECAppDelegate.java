@@ -9,5 +9,9 @@ package com.example.wz1.ec.core.delegate;
  */
 
 public abstract class ECAppDelegate extends CheckDelegate{
+    public <T extends BaseDelegate> T getParentDelegate(){
 
+        T parentFragment = (T) getParentFragment();
+        return parentFragment;
+    }
 }

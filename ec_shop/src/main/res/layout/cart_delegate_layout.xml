@@ -76,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:minHeight="50dp"
-        app:constraint_referenced_ids="icon_shop_cart_select_all,tv_all_select,tv_shop_cart_count,tv_shop_cart_number,tv_shop_cart_pay"/>
+        app:constraint_referenced_ids="icon_shop_cart_select_all,tv_shop_cart_count,tv_shop_cart_number,tv_shop_cart_pay"/>
 
     <com.joanzapata.iconify.widget.IconTextView
         android:id="@+id/icon_shop_cart_select_all"
