@@ -1,15 +1,24 @@
 package com.example.wz1.ec.shop.main.personal.profile;
 
 import android.content.DialogInterface;
+import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
+import com.bumptech.glide.load.DecodeFormat;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.listener.SimpleClickListener;
 import com.example.wz1.ec.core.delegate.CheckDelegate;
+import com.example.wz1.ec.core.utils.callback.CallBackListener;
+import com.example.wz1.ec.core.utils.callback.CallBackManager;
+import com.example.wz1.ec.core.utils.callback.CallBackType;
+import com.example.wz1.ec.core.utils.glide.GlideUtils;
 import com.example.wz1.ec.shop.R;
 import com.example.wz1.ec.shop.main.personal.list.ListItemBean;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by Administrator on 2018-10-08.
@@ -36,6 +45,13 @@ class UserProfileItemListener extends SimpleClickListener {
         switch (mId)
         {
             case 1:
+                CallBackManager.getInstances().addCallBack(CallBackType.ON_CROP, new CallBackListener<Uri>() {
+                    @Override
+                    public void execute(Uri path) {
+                        CircleImageView imageView=view.findViewById(R.id.img_arrow_avatar);
+                        GlideUtils.loadDefaultNoAnim(path,imageView,false, DecodeFormat.DEFAULT, DiskCacheStrategy.ALL);
+                    }
+                });
                 baseDelegate.checkCamera();
                 break;
             case 2:
@@ -54,8 +70,8 @@ class UserProfileItemListener extends SimpleClickListener {
             case 4:
 
                 break;
-                default:
-                    break;
+            default:
+                break;
         }
 
     }

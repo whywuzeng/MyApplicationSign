@@ -4,10 +4,18 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 
 import com.blankj.utilcode.util.ToastUtils;
+import com.example.wz1.ec.core.ui.camera.CameraImageBean;
 import com.example.wz1.ec.core.ui.camera.EcAppCamera;
+import com.example.wz1.ec.core.ui.camera.RequestCodes;
+import com.example.wz1.ec.core.utils.callback.CallBackListener;
+import com.example.wz1.ec.core.utils.callback.CallBackManager;
+import com.example.wz1.ec.core.utils.callback.CallBackType;
+import com.yalantis.ucrop.UCrop;
 
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.OnNeverAskAgain;
@@ -68,5 +76,39 @@ public abstract class CheckDelegate extends BaseDelegate {
     @OnNeverAskAgain(Manifest.permission.CAMERA)
     void onCameraNever(){
         ToastUtils.showShort("永久拒绝使用拍照");
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK)
+        {
+            if (requestCode == RequestCodes.TAKEPHOTO)
+            {
+                final Uri uri = CameraImageBean.getInstance().getUri();
+                UCrop.of(uri,uri)
+                        .withMaxResultSize(400,400)
+                        .start(getContext(),this);
+            }else if (requestCode == RequestCodes.CROP_PHOTO)
+            {
+                if (data!=null)
+                {
+                    final Uri resultUcrop = UCrop.getOutput(data);
+                    final CallBackListener callBack = CallBackManager.getInstances().getCallBack(CallBackType.ON_CROP);
+                    if (callBack!=null)
+                    {
+                        callBack.execute(resultUcrop);
+                    }
+                }
+
+            }else if (requestCode == RequestCodes.CROP_ERROR)
+            {
+                 Throwable error=null;
+                if (data!=null) {
+                    error = UCrop.getError(data);
+                }
+                ToastUtils.showShort("裁剪出错:"+error.getLocalizedMessage());
+            }
+        }
     }
 }

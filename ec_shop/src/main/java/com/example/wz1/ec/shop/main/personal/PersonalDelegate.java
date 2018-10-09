@@ -77,7 +77,7 @@ public class PersonalDelegate extends BaseItemBottomDelegate {
 
     @OnClick(R2.id.img_user_avatar)
     public void onImgUserAvatarClicked() {
-        start(new UserProfileDelegate());
+        getParentDelegate().start(new UserProfileDelegate());
     }
 
     @OnClick(R2.id.tv_all_account_arrow)
