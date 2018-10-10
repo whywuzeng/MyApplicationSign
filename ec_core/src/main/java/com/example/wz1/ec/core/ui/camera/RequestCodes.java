@@ -15,4 +15,6 @@ public class RequestCodes {
     public static final int PICKPHOTO = 0x1231;
     public static final int CROP_PHOTO = UCrop.REQUEST_CROP;
     public static final int CROP_ERROR = UCrop.RESULT_ERROR;
+
+    public static final int SCAN=0x1235;
 }

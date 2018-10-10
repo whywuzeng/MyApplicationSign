@@ -1,0 +1,7 @@
+写starLayout
+用linealayout hor横向
+摆五个 star icontext ，ids select_cout位数 is_ star_ select settag 标记
+然后判断点击五个变颜色。以及没点击的 变白色
+方法 获得所有的星星个数。点击的
+
+

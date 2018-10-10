@@ -9,5 +9,6 @@ package com.example.wz1.ec.core.utils.callback;
  */
 
 public enum CallBackType {
-    ON_CROP
+    ON_CROP,
+    ON_SCAN
 }

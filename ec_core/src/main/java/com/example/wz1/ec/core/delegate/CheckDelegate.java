@@ -12,6 +12,7 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.example.wz1.ec.core.ui.camera.CameraImageBean;
 import com.example.wz1.ec.core.ui.camera.EcAppCamera;
 import com.example.wz1.ec.core.ui.camera.RequestCodes;
+import com.example.wz1.ec.core.ui.scanner.ScannerDelegate;
 import com.example.wz1.ec.core.utils.callback.CallBackListener;
 import com.example.wz1.ec.core.utils.callback.CallBackManager;
 import com.example.wz1.ec.core.utils.callback.CallBackType;
@@ -62,6 +63,15 @@ public abstract class CheckDelegate extends BaseDelegate {
                 .show();
     }
 
+    @NeedsPermission(Manifest.permission.CAMERA)
+    public void startScanner(BaseDelegate delegate){
+        delegate.getSupportDelegate().startForResult(new ScannerDelegate(),RequestCodes.SCAN);
+    }
+
+    public void checkScanner(BaseDelegate delegate){
+        CheckDelegatePermissionsDispatcher.startScannerWithPermissionCheck(this,delegate);
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -108,6 +118,9 @@ public abstract class CheckDelegate extends BaseDelegate {
                     error = UCrop.getError(data);
                 }
                 ToastUtils.showShort("裁剪出错:"+error.getLocalizedMessage());
+            }else if (requestCode == RequestCodes.SCAN)
+            {
+
             }
         }
     }
