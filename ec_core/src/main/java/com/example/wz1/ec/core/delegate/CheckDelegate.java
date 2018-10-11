@@ -33,7 +33,7 @@ import permissions.dispatcher.RuntimePermissions;
 public abstract class CheckDelegate extends BaseDelegate {
 
     @NeedsPermission({Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE})
-    void startCamera(){
+   public void startCamera(){
         EcAppCamera.start(this);
     }
 
@@ -121,6 +121,18 @@ public abstract class CheckDelegate extends BaseDelegate {
             }else if (requestCode == RequestCodes.SCAN)
             {
 
+            }else if (requestCode ==RequestCodes.PICKPHOTO)
+            {
+                //这个和 RequestCodes.CROP_PHOTO是一样的
+                if (data!=null)
+                {
+                    final Uri resultUcrop = UCrop.getOutput(data);
+                    final CallBackListener callBack = CallBackManager.getInstances().getCallBack(CallBackType.ON_CROP);
+                    if (callBack!=null)
+                    {
+                        callBack.execute(resultUcrop);
+                    }
+                }
             }
         }
     }

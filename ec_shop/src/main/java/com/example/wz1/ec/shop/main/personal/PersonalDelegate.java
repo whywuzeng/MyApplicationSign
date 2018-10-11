@@ -13,6 +13,7 @@ import com.example.wz1.ec.shop.main.personal.address.AddressDelegate;
 import com.example.wz1.ec.shop.main.personal.list.ListAdapter;
 import com.example.wz1.ec.shop.main.personal.list.ListItemBean;
 import com.example.wz1.ec.shop.main.personal.list.ListItemType;
+import com.example.wz1.ec.shop.main.personal.order.OrderCommentDelegate;
 import com.example.wz1.ec.shop.main.personal.profile.UserProfileDelegate;
 import com.example.wz1.ec.shop.main.personal.settings.SettingsDelegate;
 import com.joanzapata.iconify.widget.IconTextView;
@@ -86,6 +87,7 @@ public class PersonalDelegate extends BaseItemBottomDelegate {
 
     @OnClick(R2.id.ll_pay)
     public void onLlPayClicked() {
+        getParentDelegate().start(new OrderCommentDelegate());
     }
 
     @OnClick(R2.id.ll_receive)
