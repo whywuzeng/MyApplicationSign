@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.example.wz1.ec.core.delegate.ECAppDelegate;
-import com.example.wz1.ec.core.ui.widget.AutoPhotoLayout;
+import com.example.wz1.ec.core.ui.widget.AutoPhotoLayout1;
 import com.example.wz1.ec.core.ui.widget.StarLayout;
 import com.example.wz1.ec.core.utils.callback.CallBackListener;
 import com.example.wz1.ec.core.utils.callback.CallBackManager;
@@ -27,7 +27,7 @@ public class OrderCommentDelegate extends ECAppDelegate {
     @BindView(R2.id.star_order_comment)
     StarLayout starOrderComment;
     @BindView(R2.id.autophoto_layout)
-    AutoPhotoLayout autophotoLayout;
+    AutoPhotoLayout1 autophotoLayout;
 
     @Override
     public Object setLayout() {

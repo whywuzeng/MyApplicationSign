@@ -42,10 +42,10 @@ public class AutoPhotoLayout extends LinearLayout {
     //一行view集合
     private List<View> lineViews= null;
     //所有的View集合 行数
-    private List<List<View>> AllViewNums= new ArrayList<>();
+    private static final List<List<View>> AllViewNums= new ArrayList<>();
 
     //所有行的不同高度
-    private List<Integer> lineHeights=new ArrayList<>();
+    private static final List<Integer> lineHeights=new ArrayList<>();
 
     //一行有多少个图片
     private  int maxLineCount=4;
@@ -128,7 +128,7 @@ public class AutoPhotoLayout extends LinearLayout {
             setMeasuredDimension(modeWidth == MeasureSpec.EXACTLY ? sizeWidth:width+getPaddingLeft()+getPaddingRight(),
                     modeHeight == MeasureSpec.EXACTLY ?sizeHeight:height+getPaddingTop()+getPaddingBottom());
 
-            final int perLineWidth = sizeWidth / maxLineCount;
+            final int perLineWidth = sizeWidth / maxLineCount-20;
             //这里要new layoutparams
             if (!isOnceInitOnMeasure)
             {
@@ -163,9 +163,9 @@ public class AutoPhotoLayout extends LinearLayout {
             {
                 lineHeights.add(lineHeight);
                 AllViewNums.add(lineViews);
-                lineViews.clear();
                 lineWidth=0;
                 lineHeight=childHeight;
+                lineViews.clear();
             }
             lineWidth+=childWidth;
             lineHeight=Math.max(lineHeight,childHeight);
@@ -194,11 +194,12 @@ public class AutoPhotoLayout extends LinearLayout {
                 final int tp = top + lp.topMargin;
                 final int viewWidth = view.getMeasuredWidth();
                 final int rt = lt+ viewWidth + lp.rightMargin;
-                final int bm =tp+ perlineHeight + lp.bottomMargin;
+                final int bm =top+ perlineHeight + lp.bottomMargin;
                 view.layout(lt,tp,rt,bm);
                 left+=viewWidth+lp.rightMargin;
             }
             top+=perlineHeight;
+            left=getPaddingLeft();
         }
         addIcon.setLayoutParams(perIconWidth);
         //为什么要放开这个呢
